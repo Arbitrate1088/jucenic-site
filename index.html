@@ -5,17 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jucenic | Consultoría</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script defer src="script.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <header>
-    <div class="navbar">
-      <div class="logo">JUCENIC</div>
+<header>
+  <div class="navbar">
+    <div class="logo">JUCENIC</div>
+
+    <button class="hamburger" id="hamburger">&#9776;</button>
+
+    <nav id="nav-menu">
       <ul class="nav-links">
         <li><a href="#inicio">Inicio</a></li>
         <li class="dropdown">
-          <a href="#">Servicios</a>
+          <button class="dropdown-toggle">Servicios ▾</button>
           <ul class="dropdown-menu">
             <li><a href="#web">Diseño Web</a></li>
             <li><a href="#finanzas">Consultoría Financiera</a></li>
@@ -24,28 +29,21 @@
         </li>
         <li><a href="#nosotros">Nosotros</a></li>
         <li><a href="#contacto">Contacto</a></li>
-        
-        <li class="dropdown">
-          <a href="#cliente">Cliente</a>
-               <ul class="dropdown-menu">
-                 <li><a href="#estado">Estado de Cuenta</a></li>
-              </ul>
-        </li>
-        
       </ul>
-    </div>
-  </header>
+    </nav>
+  </div>
+</header>
 
-  <main>
-    <section id="inicio">
-      <h1>Bienvenido a Jucenic</h1>
-      <p>Soluciones digitales modernas para tus proyectos personales o empresariales.</p>
-    </section>
-  </main>
+<main>
+  <section id="inicio">
+    <h1>Bienvenido a Jucenic</h1>
+    <p>Soluciones digitales para impulsar tus ideas.</p>
+  </section>
+</main>
 
-  <footer>
-    <p>© 2025 Jucenic | <a href="mailto:correo@ejemplo.com">Correo</a></p>
-  </footer>
+<footer>
+  <p>© 2025 Jucenic | <a href="mailto:correo@ejemplo.com">Correo</a></p>
+</footer>
 
 </body>
 </html>
