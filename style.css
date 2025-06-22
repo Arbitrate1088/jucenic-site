@@ -1,7 +1,14 @@
-﻿* {
+﻿/* Reset y base */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 body {
@@ -10,6 +17,14 @@ body {
   color: #333;
 }
 
+main {
+  flex: 1;
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Navbar */
 header {
   background-color: #fff;
   position: sticky;
@@ -19,19 +34,17 @@ header {
 }
 
 .navbar {
-  max-width: 1200px;
-  margin: auto;
-  padding: 1rem 2rem;
+  width: 100%;
+  padding: 1rem 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
 }
 
-.logo {
-  font-weight: 700;
-  font-size: 1.5rem;
-  color: #0066cc;
+.logo img {
+  height: 48px;
+  width: auto;
 }
 
 nav {
@@ -59,7 +72,6 @@ nav {
   cursor: pointer;
   padding: 0.5rem;
   text-decoration: none;
-  font-weight: 600; /* más grosor */
 }
 
 .nav-links a:hover,
@@ -67,7 +79,7 @@ nav {
   color: #0066cc;
 }
 
-/* Dropdown menu */
+/* Dropdown */
 .dropdown-menu {
   display: none;
   position: absolute;
@@ -95,20 +107,20 @@ nav {
   padding: 0.75rem 1.25rem;
   color: #333;
   text-decoration: none;
-  font-weight: 500;
 }
 
 .dropdown-menu li a:hover {
   background: #f2f2f2;
 }
 
-/* Móvil: hamburguesa */
+/* Botón hamburguesa */
 .hamburger {
   display: none;
   font-size: 1.5rem;
   background: none;
   border: none;
   cursor: pointer;
+  margin-left: auto;
 }
 
 /* Responsive */
@@ -136,18 +148,12 @@ nav {
   }
 }
 
-main {
-  padding: 2rem;
-  max-width: 900px;
-  margin: auto;
-}
-
+/* Footer */
 footer {
   background: #222;
   color: #ccc;
   text-align: center;
   padding: 2rem 1rem;
-  margin-top: 4rem;
 }
 
 footer a {
