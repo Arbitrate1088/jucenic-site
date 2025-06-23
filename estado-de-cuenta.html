@@ -1,75 +1,111 @@
-﻿<div class="cuadro-simple">
-  <h2>Resumen de Movimientos</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Fecha</th>
-        <th>Concepto</th>
-        <th>Monto S/</th>
-        <th>Monto $</th>
-        <th>Banco</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>01-jun-2025</td><td>Pago</td><td>500.00</td><td>133.33</td><td>BCP</td></tr>
-      <tr><td>05-jun-2025</td><td>Transferencia</td><td>800.00</td><td>213.33</td><td>Interbank</td></tr>
-      <tr><td>10-jun-2025</td><td>Depósito</td><td>1200.00</td><td>320.00</td><td>BBVA</td></tr>
-      <tr><td>15-jun-2025</td><td>Retiro</td><td>300.00</td><td>80.00</td><td>BCP</td></tr>
-      <tr><td>18-jun-2025</td><td>Pago</td><td>450.00</td><td>120.00</td><td>Scotiabank</td></tr>
-      <tr><td>21-jun-2025</td><td>Depósito</td><td>700.00</td><td>186.67</td><td>BBVA</td></tr>
-      <tr><td>22-jun-2025</td><td>Transferencia</td><td>650.00</td><td>173.33</td><td>Interbank</td></tr>
-    </tbody>
-    <tfoot>
-      <tr>
-        <th colspan="2">Total</th>
-        <th>S/ 4600.00</th>
-        <th>$ 1226.66</th>
-        <th></th>
-      </tr>
-    </tfoot>
-  </table>
-</div>
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Estado de Cuenta</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      background: #f4f4f4;
+      color: #2c2c2c;
+      margin: 0;
+      padding: 0;
+    }
 
-<style>
-  .cuadro-simple {
-    font-family: 'Segoe UI', sans-serif;
-    max-width: 900px;
-    margin: 2rem auto;
-    background: white;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
-  }
+    header, footer {
+      background-color: #202123;
+      color: white;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
 
-  .cuadro-simple h2 {
-    text-align: center;
-    margin-bottom: 1rem;
-    color: #333;
-  }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+    }
 
-  .cuadro-simple table {
-    width: 100%;
-    border-collapse: collapse;
-  }
+    .contenido {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 2rem;
+    }
 
-  .cuadro-simple th, .cuadro-simple td {
-    padding: 10px;
-    text-align: center;
-    border-bottom: 1px solid #ddd;
-  }
+    .tabla-estado {
+      border-collapse: collapse;
+      width: auto;
+    }
 
-  .cuadro-simple thead th {
-    background-color: #f3f3f3;
-    color: #222;
-    border-bottom: 2px solid #999; /* <- línea más oscura en encabezado */
-  }
+    .tabla-estado th,
+    .tabla-estado td {
+      padding: 8px 10px;
+      border-bottom: 1px solid #ddd;
+    }
 
-  .cuadro-simple tbody tr:nth-child(even) {
-    background-color: #fafafa;
-  }
+    .tabla-estado thead th {
+      background-color: #f3f3f3;
+      border-bottom: 2px solid #666;
+    }
 
-  .cuadro-simple tfoot th {
-    background-color: #f0f0f0;
-    font-weight: bold;
-  }
-</style>
+    .izquierda {
+      text-align: left;
+    }
+
+    .derecha {
+      text-align: right;
+    }
+
+    .btn-imprimir {
+      margin-top: 1rem;
+      background-color: #10a37f;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      cursor: pointer;
+      font-size: 12px;
+      border-radius: 5px;
+    }
+
+    .btn-imprimir:hover {
+      background-color: #0e8c6d;
+    }
+
+    @media print {
+      header, footer, .btn-imprimir {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Jucenic</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="estado-de-cuenta.html">Estado de Cuenta</a>
+    </nav>
+  </header>
+
+  <div class="contenido">
+    <h2>Resumen de Cuenta</h2>
+    <div id="tabla-container">Cargando tabla...</div>
+    <button class="btn-imprimir" onclick="window.print()">Imprimir</button>
+  </div>
+
+  <footer>
+    <p>© 2025 Jucenic</p>
+  </footer>
+
+  <script>
+    fetch("tabla-estado.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("tabla-container").innerHTML = data;
+      });
+  </script>
+</body>
+</html>
