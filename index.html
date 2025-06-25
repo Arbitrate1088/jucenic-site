@@ -1,61 +1,73 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jucenic | Consultoría</title>
+  <title>Jucenic - Inicio</title>
   <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<header>
-  <div class="navbar">
-    <a href="index.html" class="logo">
-      <img src="logoipsum-custom-logo.svg" alt="Jucenic logo">
-    </a>
+  <!-- Contenedor para el menú -->
+  <div id="menu-container"></div>
 
-    <button class="hamburger" id="hamburger">&#9776;</button>
+  <!-- Contenido principal -->
+  <main style="max-width: 590px; margin: 40px auto 60px; padding: 0 20px;">
+    <h1 style="font-size: 60px; color: #000; font-family: Arial, sans-serif;">Bienvenido a Jucenic</h1>
+    <h2 style="font-size: 16px; color: #555; font-family: Arial, sans-serif; margin-top: 10px;">
+      Soluciones digitales para impulsar tus ideas
+    </h2>
+  </main>
 
-    <nav id="nav-menu">
-      <ul class="nav-links">
-        <li><a href="index.html">Inicio</a></li>
+  <!-- Contenedor para el pie de página -->
+  <div id="footer-container"></div>
 
-        <li class="dropdown">
-          <button class="dropdown-toggle">Servicios ▾</button>
-          <ul class="dropdown-menu">
-            <li><a href="servicios.html#web">Diseño Web</a></li>
-            <li><a href="servicios.html#finanzas">Consultoría Financiera</a></li>
-            <li><a href="servicios.html#inmobiliaria">Asesoría Inmobiliaria</a></li>
-          </ul>
-        </li>
+  <!-- Script para cargar menú y pie dinámicamente -->
+  <script>
+    // Cargar menú
+    fetch('menu.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('menu-container').innerHTML = data;
 
-        <li><a href="nosotros.html">Nosotros</a></li>
+        // Inicializar comportamiento del menú
+        const toggles   = document.querySelectorAll('.dropdown-toggle');
+        const hamburger = document.getElementById('menu-toggle');
+        const navLinks  = document.querySelector('.menu');
 
-        <li class="dropdown">
-          <button class="dropdown-toggle">Clientes ▾</button>
-          <ul class="dropdown-menu">
-            <li><a href="estado-de-cuenta.html">Estado de Cuenta</a></li>
-          </ul>
-        </li>
+        // Submenús desplegables
+        toggles.forEach(toggle => {
+          toggle.addEventListener('click', e => {
+            e.stopPropagation();
+            const parent = toggle.closest('.dropdown');
+            parent.classList.toggle('open');
+            document.querySelectorAll('.dropdown').forEach(d => {
+              if (d !== parent) d.classList.remove('open');
+            });
+          });
+        });
 
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+        // Cerrar submenús al hacer clic fuera
+        document.addEventListener('click', e => {
+          document.querySelectorAll('.dropdown').forEach(d => {
+            if (!d.contains(e.target)) d.classList.remove('open');
+          });
+        });
 
-<main>
-  <section id="inicio">
-    <h1>Bienvenido a Jucenic</h1>
-    <p>Soluciones digitales para impulsar tus ideas.</p>
-  </section>
-</main>
+        // Menú hamburguesa móvil
+        if (hamburger && navLinks) {
+          hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+          });
+        }
+      });
 
-<footer>
-  <p>© 2025 Jucenic | <a href="mailto:correo@ejemplo.com">Correo</a></p>
-</footer>
-
+    // Cargar pie de página
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+      });
+  </script>
 </body>
 </html>
