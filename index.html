@@ -27,13 +27,54 @@
 <footer>
   <p>© 2025 Jucenic | <a href="mailto:correo@ejemplo.com">Correo</a></p>
 </footer>
-<script>
-  fetch('menu.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('menu-container').innerHTML = data;
-    });
-</script>
+  <!-- Carga dinámica de menú y pie -->
+  <script>
+    // Carga y procesa el menú
+    fetch('menu.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('menu-container').innerHTML = data;
+
+        // Inicializa aquí toda la lógica del menú desplegable y hamburguesa
+        const toggles    = document.querySelectorAll('.dropdown-toggle');
+        const hamburger  = document.getElementById('menu-toggle');
+        const navLinks   = document.querySelector('.menu');
+
+        // Dropdowns
+        toggles.forEach(toggle => {
+          toggle.addEventListener('click', e => {
+            e.stopPropagation();
+            const parent = toggle.closest('.dropdown');
+            parent.classList.toggle('open');
+            document.querySelectorAll('.dropdown').forEach(d => {
+              if (d !== parent) d.classList.remove('open');
+            });
+          });
+        });
+
+        // Cerrar dropdowns al hacer clic fuera
+        document.addEventListener('click', e => {
+          document.querySelectorAll('.dropdown').forEach(d => {
+            if (!d.contains(e.target)) d.classList.remove('open');
+          });
+        });
+
+        // Menú hamburguesa móvil
+        if (hamburger && navLinks) {
+          hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+          });
+        }
+      });
+
+    // Carga dinámica del footer
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+      });
+  </script>
+
 
 
 </body>
