@@ -28,9 +28,13 @@
   <p>© 2025 Jucenic | <a href="mailto:correo@ejemplo.com">Correo</a></p>
 </footer>
 <script>
-  document.getElementById('menu-container').innerHTML =
-    '<nav><p>Menú cargado correctamente 👍</p></nav>';
+  fetch('menu.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('menu-container').innerHTML = data;
+    });
 </script>
+
 
 </body>
 </html>
