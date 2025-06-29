@@ -1,4 +1,4 @@
-﻿/* Fuente y configuración base */
+﻿/* ==== BASE GENERAL ==== */
 body {
   font-family: 'Inter', Helvetica, Arial, sans-serif;
   font-size: 12px;
@@ -8,24 +8,28 @@ body {
   background-color: #fff;
 }
 
-/* Contenedor general */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-/* Header */
+/* ==== CABECERA ==== */
 .header {
   background-color: #fff;
+  height: 55px;
   border-bottom: 1px solid #ddd;
-  padding: 12px 0;
   position: sticky;
   top: 0;
   z-index: 1000;
+}
+
+.container {
+  max-width: 1200px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 35px;
 }
 
 /* Logo */
@@ -37,7 +41,7 @@ body {
 .nav {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 16px;
 }
 
 .menu {
@@ -46,6 +50,7 @@ body {
   gap: 24px;
   padding: 0;
   margin: 0;
+  align-items: center;
 }
 
 .menu li {
@@ -53,8 +58,6 @@ body {
 }
 
 .menu a {
-  text-decoration: none;
-  color: #333;
   font-size: 16px;
   font-weight: 400;
 }
@@ -84,11 +87,51 @@ body {
 
 .submenu a {
   display: block;
-  color: #333;
   font-size: 16px;
 }
 
-/* Botón de inicio de sesión */
+/* Menú desplegable de idioma */
+.lang-selector {
+  position: relative;
+}
+
+.lang-selector button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 8px;
+}
+
+.lang-selector img {
+  width: 24px;
+  height: auto;
+}
+
+.lang-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  padding: 8px;
+  z-index: 1001;
+}
+
+.lang-dropdown img {
+  width: 24px;
+  display: block;
+  margin: 6px 0;
+  cursor: pointer;
+}
+
+.lang-selector:hover .lang-dropdown {
+  display: block;
+}
+
+/* Botón de sesión */
 .btn-login {
   background-color: #9FE870;
   color: #000;
@@ -96,20 +139,12 @@ body {
   font-size: 16px;
   padding: 12px 64px;
   border: none;
-  border-radius: 12px;
+  border-radius: 24px;
   text-decoration: none;
   margin-left: 16px;
 }
 
-/* Banderas */
-.flags img {
-  width: 24px;
-  height: auto;
-  margin-left: 8px;
-  cursor: pointer;
-}
-
-/* Botón hamburguesa */
+/* Botón hamburguesa (oculto en escritorio) */
 .hamburger {
   display: none;
   background: none;
@@ -118,31 +153,40 @@ body {
   cursor: pointer;
 }
 
-/* Sección principal */
+/* ==== CONTENIDO PRINCIPAL ==== */
 main.contenido-principal {
-  padding: 48px 16px;
+  padding: 0;
 }
 
 .intro {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   max-width: 1200px;
   margin: auto;
   gap: 24px;
 }
 
+/* Título */
 .titulo {
   font-size: 60px;
   font-weight: bold;
-  margin: 0;
+  margin-top: 240px;
+  margin-left: 130px;
 }
 
+/* Párrafo */
 .descripcion {
   font-size: 16px;
   font-weight: normal;
+  margin-left: 130px;
   margin-bottom: 24px;
   max-width: 570px;
+}
+
+/* Botón principal bajo el texto */
+.intro .btn-login {
+  margin-left: 130px;
 }
 
 /* Imagen derecha */
@@ -151,25 +195,48 @@ main.contenido-principal {
   height: auto;
 }
 
-/* Responsivo móvil */
+/* ==== PIE DE PÁGINA ==== */
+.footer {
+  background-color: #f3f3f3;
+  border-top: 1px solid #ccc;
+  padding: 20px 0;
+  margin-top: 80px;
+  font-size: 12px;
+  color: #333;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  gap: 16px;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 400;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* ==== RESPONSIVO PARA MÓVIL ==== */
 @media (max-width: 768px) {
-  .intro {
-    flex-direction: column;
-    text-align: left;
-  }
-
-  .descripcion, .titulo {
-    max-width: 100%;
-  }
-
-  .intro .imagen {
-    width: 100%;
-  }
-
-  .nav, .menu {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
+  .container {
+    padding: 0 16px;
   }
 
   .hamburger {
@@ -178,9 +245,35 @@ main.contenido-principal {
 
   .menu {
     display: none;
+    flex-direction: column;
+    gap: 16px;
+    background-color: #fff;
+    width: 100%;
   }
 
   .menu.active {
     display: flex;
+  }
+
+  .intro {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .titulo {
+    margin-top: 160px;
+    margin-left: 0;
+    font-size: 40px;
+  }
+
+  .descripcion {
+    margin-left: 0;
+    font-size: 14px;
+  }
+
+  .intro .btn-login {
+    margin-left: 0;
+    padding: 12px 48px;
   }
 }

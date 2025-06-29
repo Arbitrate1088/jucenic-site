@@ -6,9 +6,9 @@
       <img src="assets/img/jucenic-logo.svg" alt="Jucenic Logo" height="40">
     </a>
 
-    <!-- Menú de navegación -->
+    <!-- Navegación -->
     <nav class="nav">
-      <ul class="menu">
+      <ul class="menu" id="menu">
         <li><a href="index.html">Inicio</a></li>
 
         <li class="has-submenu">
@@ -32,17 +32,18 @@
         <li><a href="contact.html">Contacto</a></li>
       </ul>
 
-      <!-- Banderas de idioma -->
-      <div class="flags">
-        <a href="#" title="Español">
-          <img src="assets/img/es.svg" alt="Español" width="24">
-        </a>
-        <a href="#" title="English">
-          <img src="assets/img/us.svg" alt="English" width="24">
-        </a>
+      <!-- Menú desplegable de idiomas con una sola bandera visible -->
+      <div class="lang-selector">
+        <button>
+          <img src="assets/img/es.svg" alt="Idioma actual">
+        </button>
+        <div class="lang-dropdown">
+          <img src="assets/img/es.svg" alt="Español" title="Español">
+          <img src="assets/img/us.svg" alt="English" title="English">
+        </div>
       </div>
 
-      <!-- Botón Iniciar sesión -->
+      <!-- Botón de sesión -->
       <a href="#" class="btn-login">Iniciar sesión</a>
     </nav>
 
