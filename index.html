@@ -1,2 +1,39 @@
-﻿<div id="header"></div>
-<script src="js/cargar-header.js"></script>
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jucenic | Inicio</title>
+
+  <!-- Estilos principales -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Fuente Inter recomendada -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ✅ Aquí se cargará el menú desde componentes/header.html -->
+  <div id="header"></div>
+
+  <!-- ✅ Contenido principal -->
+  <main class="contenido-principal">
+    <section class="intro">
+      <div class="texto">
+        <h1 class="titulo">Bienvenido a Jucenic</h1>
+        <p class="descripcion">Tu aliado en servicios financieros e inmobiliarios.</p>
+        <a href="#" class="btn-login">Iniciar sesión</a>
+      </div>
+
+      <div class="imagen">
+        <!-- Puedes reemplazar esta imagen por la que desees -->
+        <img src="assets/img/tu-imagen-principal.svg" alt="Jucenic Ilustración" />
+      </div>
+    </section>
+  </main>
+
+  <!-- ✅ Aquí se cargará el encabezado vía JavaScript -->
+  <script src="js/cargar-header.js"></script>
+
+</body>
+</html>
