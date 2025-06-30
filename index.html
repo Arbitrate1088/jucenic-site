@@ -3,37 +3,85 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jucenic | Inicio</title>
-
-  <!-- Estilos principales -->
+  <title>Jucenic - Inicio</title>
   <link rel="stylesheet" href="css/style.css" />
-
-  <!-- Fuente Inter recomendada -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- CABECERA -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <img src="assets/img/jucenic-logo.svg" alt="Jucenic Logo" />
+      </div>
+      <nav class="nav">
+        <ul class="menu" id="menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li class="has-submenu">
+            <a href="#">Servicios ▾</a>
+            <ul class="submenu">
+              <li><a href="base-datos.html">Base de Datos</a></li>
+            </ul>
+          </li>
+          <li><a href="about.html">Quiénes Somos</a></li>
+          <li class="has-submenu">
+            <a href="#">Clientes ▾</a>
+            <ul class="submenu">
+              <li><a href="estado-de-cuenta.html">Estado de Cuenta</a></li>
+              <li><a href="resumen.html">Resumen</a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
 
-  <!-- ✅ Aquí se cargará el menú desde componentes/header.html -->
-  <div id="header"></div>
+        <!-- Selector de idioma -->
+        <div class="lang-selector">
+          <button><img src="assets/img/es.png" alt="Idioma" /></button>
+          <div class="lang-dropdown">
+            <img src="assets/img/es.png" alt="Español" />
+            <img src="assets/img/us.png" alt="Inglés" />
+          </div>
+        </div>
 
-  <!-- ✅ Contenido principal -->
+        <!-- Botón de sesión visible solo en escritorio -->
+        <a href="#" class="btn-login header-btn">Iniciar sesión</a>
+
+        <!-- Botón hamburguesa -->
+        <button id="hamburger" class="hamburger">☰</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
   <main class="contenido-principal">
     <section class="intro">
       <div class="texto">
         <h1 class="titulo">Bienvenido a Jucenic</h1>
-        <p class="descripcion">Tu aliado en servicios financieros e inmobiliarios.</p>
+        <p class="descripcion">
+          Ofrecemos soluciones confiables y transparentes para la gestión de tus inversiones y patrimonio.
+        </p>
         <a href="#" class="btn-login">Iniciar sesión</a>
       </div>
-
       <div class="imagen">
-        <!-- Puedes reemplazar esta imagen por la que desees -->
-        <img src="assets/img/tu-imagen-principal.svg" alt="Jucenic Ilustración" />
+        <img src="assets/img/imagen-principal.svg" alt="Imagen Principal" />
       </div>
     </section>
   </main>
 
-  <!-- ✅ Aquí se cargará el encabezado vía JavaScript -->
-  <script src="js/cargar-header.js"></script>
+  <!-- PIE DE PÁGINA -->
+  <footer class="footer">
+    <div class="footer-container">
+      <p>&copy; 2025 Jucenic. Todos los derechos reservados.</p>
+      <ul class="footer-links">
+        <li><a href="contact.html">Contacto</a></li>
+        <li><a href="#">Términos</a></li>
+        <li><a href="#">Privacidad</a></li>
+      </ul>
+    </div>
+  </footer>
 
+  <!-- SCRIPTS -->
+  <script src="js/cargar-header.js"></script>
+  <script src="js/cargar-footer.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
