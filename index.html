@@ -7,49 +7,8 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <!-- CABECERA -->
-  <header class="header">
-    <div class="container">
-      <div class="logo">
-        <img src="assets/img/jucenic-logo.svg" alt="Jucenic Logo" />
-      </div>
-      <nav class="nav">
-        <ul class="menu" id="menu">
-          <li><a href="index.html">Inicio</a></li>
-          <li class="has-submenu">
-            <a href="#">Servicios ▾</a>
-            <ul class="submenu">
-              <li><a href="base-datos.html">Base de Datos</a></li>
-            </ul>
-          </li>
-          <li><a href="about.html">Quiénes Somos</a></li>
-          <li class="has-submenu">
-            <a href="#">Clientes ▾</a>
-            <ul class="submenu">
-              <li><a href="estado-de-cuenta.html">Estado de Cuenta</a></li>
-              <li><a href="resumen.html">Resumen</a></li>
-            </ul>
-          </li>
-          <li><a href="contact.html">Contacto</a></li>
-        </ul>
-
-        <!-- Selector de idioma -->
-        <div class="lang-selector">
-          <button><img src="assets/img/es.png" alt="Idioma" /></button>
-          <div class="lang-dropdown">
-            <img src="assets/img/es.png" alt="Español" />
-            <img src="assets/img/us.png" alt="Inglés" />
-          </div>
-        </div>
-
-        <!-- Botón de sesión visible solo en escritorio -->
-        <a href="#" class="btn-login header-btn">Iniciar sesión</a>
-
-        <!-- Botón hamburguesa -->
-        <button id="hamburger" class="hamburger">☰</button>
-      </nav>
-    </div>
-  </header>
+  <!-- CABECERA DINÁMICA -->
+  <div id="header"></div>
 
   <!-- CONTENIDO PRINCIPAL -->
   <main class="contenido-principal">
@@ -67,17 +26,8 @@
     </section>
   </main>
 
-  <!-- PIE DE PÁGINA -->
-  <footer class="footer">
-    <div class="footer-container">
-      <p>&copy; 2025 Jucenic. Todos los derechos reservados.</p>
-      <ul class="footer-links">
-        <li><a href="contact.html">Contacto</a></li>
-        <li><a href="#">Términos</a></li>
-        <li><a href="#">Privacidad</a></li>
-      </ul>
-    </div>
-  </footer>
+  <!-- PIE DE PÁGINA DINÁMICO -->
+  <div id="footer"></div>
 
   <!-- SCRIPTS -->
   <script src="js/cargar-header.js"></script>
