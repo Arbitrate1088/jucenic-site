@@ -1,8 +1,11 @@
-﻿/* ========== FUENTES Y BASE ========== */
+﻿/* ==== BASE GENERAL ==== */
 body {
-  margin: 0;
   font-family: 'Inter', Helvetica, Arial, sans-serif;
   font-size: 12px;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background-color: #fff;
 }
 
 a {
@@ -10,51 +13,56 @@ a {
   color: inherit;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-/* ========== CABECERA ========== */
+/* ==== CABECERA ==== */
 .header {
+  background-color: #fff;
   height: 55px;
-  display: flex;
-  align-items: center;
-  background-color: #ffffff;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .container {
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 35px;
+  max-width: 1200px;
+  height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 35px;
 }
 
+/* Logo */
 .logo img {
-  max-width: 192px;
+  height: 40px;
 }
 
+/* Menú */
 .nav {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 16px;
 }
 
 .menu {
+  list-style: none;
   display: flex;
   gap: 24px;
+  padding: 0;
+  margin: 0;
+  align-items: center;
 }
 
-.menu li a {
+.menu li {
+  position: relative;
+}
+
+.menu a {
   font-size: 16px;
-  font-weight: normal;
+  font-weight: 400;
 }
 
+/* Submenús */
 .has-submenu:hover .submenu {
   display: block;
 }
@@ -62,13 +70,27 @@ ul {
 .submenu {
   display: none;
   position: absolute;
-  background-color: white;
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin-top: 8px;
-  z-index: 100;
+  background-color: #fff;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+  top: 100%;
+  left: 0;
+  list-style: none;
+  padding: 8px 0;
+  margin: 0;
+  z-index: 1001;
+  min-width: 160px;
 }
 
+.submenu li {
+  padding: 6px 16px;
+}
+
+.submenu a {
+  display: block;
+  font-size: 16px;
+}
+
+/* Menú desplegable de idioma */
 .lang-selector {
   position: relative;
 }
@@ -77,136 +99,181 @@ ul {
   background: none;
   border: none;
   cursor: pointer;
+  padding: 0;
+  margin-left: 8px;
+}
+
+.lang-selector img {
+  width: 24px;
+  height: auto;
 }
 
 .lang-dropdown {
-  position: absolute;
   display: none;
+  position: absolute;
   top: 100%;
   right: 0;
-  background-color: white;
-  border: 1px solid #ccc;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  padding: 8px;
+  z-index: 1001;
+}
+
+.lang-dropdown img {
+  width: 24px;
+  display: block;
+  margin: 6px 0;
+  cursor: pointer;
 }
 
 .lang-selector:hover .lang-dropdown {
   display: block;
 }
 
-.lang-dropdown img {
-  width: 24px;
-  margin: 5px;
-  cursor: pointer;
-}
-
-.btn-login.header-btn {
+/* Botón de sesión */
+.btn-login {
   background-color: #9FE870;
+  color: #000;
   font-weight: bold;
   font-size: 16px;
   padding: 12px 64px;
   border: none;
   border-radius: 24px;
-  cursor: pointer;
+  text-decoration: none;
+  margin-left: 16px;
 }
 
-/* ========== HAMBURGUESA ========== */
+/* Botón hamburguesa (oculto en escritorio) */
 .hamburger {
   display: none;
-  font-size: 28px;
   background: none;
   border: none;
+  font-size: 28px;
   cursor: pointer;
 }
 
-/* ========== CONTENIDO PRINCIPAL ========== */
-.intro {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 240px 35px 80px;
-  max-width: 1280px;
-  margin: 0 auto;
+/* ==== CONTENIDO PRINCIPAL ==== */
+main.contenido-principal {
+  padding: 0;
 }
 
+.intro {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  gap: 24px;
+}
+
+/* Título */
 .titulo {
   font-size: 60px;
   font-weight: bold;
-  max-width: 465px;
+  margin-top: 240px;
   margin-left: 130px;
 }
 
+/* Párrafo */
 .descripcion {
   font-size: 16px;
-  max-width: 465px;
+  font-weight: normal;
   margin-left: 130px;
+  margin-bottom: 24px;
+  max-width: 570px;
 }
 
+/* Botón principal bajo el texto */
 .intro .btn-login {
-  display: inline-block;
   margin-left: 130px;
-  margin-top: 20px;
 }
 
-/* ========== RESPONSIVE ========== */
+/* Imagen derecha */
+.intro .imagen img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ==== PIE DE PÁGINA ==== */
+.footer {
+  background-color: #f3f3f3;
+  border-top: 1px solid #ccc;
+  padding: 20px 0;
+  margin-top: 80px;
+  font-size: 12px;
+  color: #333;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  gap: 16px;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 400;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* ==== RESPONSIVO PARA MÓVIL ==== */
 @media (max-width: 768px) {
-  .header {
-    height: auto;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px 16px;
-  }
-
   .container {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px 16px;
-  }
-
-  .logo img {
-    max-width: 30%;
+    padding: 0 16px;
   }
 
   .hamburger {
     display: block;
-    align-self: flex-end;
   }
 
   .menu {
-    flex-direction: column;
-    width: 100%;
     display: none;
+    flex-direction: column;
+    gap: 16px;
     background-color: #fff;
-    margin-top: 10px;
+    width: 100%;
   }
 
   .menu.active {
     display: flex;
   }
 
-  .submenu {
-    position: static;
-    border: none;
-    padding-left: 20px;
-  }
-
-  .btn-login.header-btn {
-    display: none;
-  }
-
   .intro {
     flex-direction: column;
-    padding: 120px 20px 40px;
-    align-items: center;
     text-align: center;
+    align-items: center;
   }
 
-  .titulo,
-  .descripcion,
-  .intro .btn-login {
-    margin: 0;
-    max-width: 100%;
+  .titulo {
+    margin-top: 160px;
+    margin-left: 0;
+    font-size: 40px;
+  }
+
+  .descripcion {
+    margin-left: 0;
+    font-size: 14px;
   }
 
   .intro .btn-login {
-    margin-top: 24px;
+    margin-left: 0;
+    padding: 12px 48px;
   }
 }
