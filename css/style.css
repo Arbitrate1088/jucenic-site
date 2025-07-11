@@ -4,7 +4,7 @@ body {
   font-size: 12px;
   margin: 0;
   padding: 0;
-  color: #333;
+  color: #000000;
   background-color: #fff;
 }
 
@@ -30,11 +30,13 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 0 35px;
+  padding-left: 25px;
+  padding-right: 30px;
 }
 
 /* Logo */
 .logo img {
-  height: 40px;
+  max-width: 190px;
 }
 
 /* Menú */
@@ -59,7 +61,8 @@ a {
 
 .menu a {
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 550;
+  
 }
 
 /* Submenús */
@@ -78,16 +81,18 @@ a {
   padding: 8px 0;
   margin: 0;
   z-index: 1001;
-  min-width: 160px;
+  min-width: 190px;
 }
 
 .submenu li {
-  padding: 6px 16px;
+  padding: 6px 6px;
 }
 
 .submenu a {
   display: block;
   font-size: 16px;
+   
+  color: #808080;
 }
 
 /* Menú desplegable de idioma */
@@ -127,24 +132,46 @@ a {
   cursor: pointer;
 }
 
+.icon-chevron {
+  width: 12px;
+  height: 12px;
+  margin-left: 4px;
+  vertical-align: middle;
+  stroke: currentColor;
+}
+
 .lang-selector:hover .lang-dropdown {
   display: block;
 }
 
-/* Botón de sesión */
+/* ==== BOTONES ==== */
 .btn-login {
-  background-color: #9FE870;
-  color: #000;
   font-weight: bold;
   font-size: 16px;
   padding: 12px 64px;
   border: none;
   border-radius: 24px;
   text-decoration: none;
-  margin-left: 16px;
+  display: inline-block;
 }
 
-/* Botón hamburguesa (oculto en escritorio) */
+/* Botón cabecera */
+.header-btn {
+  background-color: #9FE870;
+  color: #000;
+  margin-left: 16px;
+  padding: 14px 30px;
+  
+}
+
+/* Botón principal */
+.main-btn {
+  background-color:  #9FE870;
+  color: #000;
+  margin-left: 130px;
+}
+
+/* ==== HAMBURGUESA ==== */
 .hamburger {
   display: none;
   background: none;
@@ -170,23 +197,34 @@ main.contenido-principal {
 /* Título */
 .titulo {
   font-size: 60px;
-  font-weight: bold;
+  font-weight: 700;
   margin-top: 240px;
   margin-left: 130px;
+  margin-bottom: 10px;
+  letter-spacing: -3px;
+  line-height:110%;
 }
 
 /* Párrafo */
 .descripcion {
-  font-size: 16px;
-  font-weight: normal;
+  font-size: 20px;
+  font-weight: 500;
+  font-style: normal;
   margin-left: 130px;
   margin-bottom: 24px;
   max-width: 570px;
+  letter-spacing: -1px;
+  line-height:28px;
+  color: #7d7c83;
 }
 
 /* Botón principal bajo el texto */
-.intro .btn-login {
+.intro .main-btn {
   margin-left: 130px;
+  letter-spacing: -1px;
+  font-size: 20px;
+
+   
 }
 
 /* Imagen derecha */
@@ -237,6 +275,8 @@ main.contenido-principal {
 @media (max-width: 768px) {
   .container {
     padding: 0 16px;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .hamburger {
@@ -262,7 +302,7 @@ main.contenido-principal {
   }
 
   .titulo {
-    margin-top: 160px;
+    margin-top: 120px;
     margin-left: 0;
     font-size: 40px;
   }
@@ -272,8 +312,16 @@ main.contenido-principal {
     font-size: 14px;
   }
 
-  .intro .btn-login {
+  .intro .main-btn {
     margin-left: 0;
     padding: 12px 48px;
+  }
+
+  .header-btn {
+    display: none;
+  }
+
+  .logo img {
+    max-width: 30%;
   }
 }
