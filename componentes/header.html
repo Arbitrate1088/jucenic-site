@@ -1,53 +1,47 @@
 ﻿<header class="header">
   <div class="container">
-    
     <!-- Logo -->
     <a href="index.html" class="logo">
-      <img src="assets/img/jucenic-logo.svg" alt="Jucenic Logo" height="40">
+      <img src="assets/img/jucenic-logo.svg" alt="Jucenic Logo">
     </a>
+
+    <!-- Botón hamburguesa (solo visible en móvil) -->
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
 
     <!-- Navegación -->
     <nav class="nav">
       <ul class="menu" id="menu">
         <li><a href="index.html">Inicio</a></li>
-
+        <li><a href="about.html">Quiénes somos</a></li>
         <li class="has-submenu">
-          <a href="#">Servicios ▾</a>
-          <ul class="submenu">
-            <li><a href="servicio.html">Servicio</a></li>
-            <li><a href="base-datos.html">Base de Datos</a></li>
-          </ul>
-        </li>
-
-        <li><a href="about.html">Quiénes Somos</a></li>
-
-        <li class="has-submenu">
-          <a href="#">Clientes ▾</a>
+          <a href="#">Clientes <svg class="icon-chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           <ul class="submenu">
             <li><a href="estado-de-cuenta.html">Estado de Cuenta</a></li>
             <li><a href="resumen.html">Resumen</a></li>
           </ul>
         </li>
-
+        <li class="has-submenu">
+          <a href="#">Servicios <svg class="icon-chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <ul class="submenu">
+            <li><a href="base-datos.html">Base de Datos</a></li>
+          </ul>
+        </li>
         <li><a href="contact.html">Contacto</a></li>
       </ul>
 
-      <!-- Menú desplegable de idiomas con una sola bandera visible -->
+      <!-- Selector de idioma -->
       <div class="lang-selector">
         <button>
           <img src="assets/img/es.svg" alt="Idioma actual">
         </button>
         <div class="lang-dropdown">
-          <img src="assets/img/es.svg" alt="Español" title="Español">
-          <img src="assets/img/us.svg" alt="English" title="English">
+          <img src="assets/img/es.svg" alt="Español">
+          <img src="assets/img/us.svg" alt="Inglés">
         </div>
       </div>
 
-      <!-- Botón de sesión -->
-      <a href="#" class="btn-login">Iniciar sesión</a>
+      <!-- Botón de sesión (escritorio solamente) -->
+      <a href="#" class="btn-login header-btn">Iniciar sesión</a>
     </nav>
-
-    <!-- Botón hamburguesa para móvil -->
-    <button class="hamburger" id="hamburger">☰</button>
   </div>
 </header>
