@@ -28,3 +28,9 @@
     }
   }
 });
+function toggleMenu() {
+  const nav = document.querySelector('.nav');
+  if (nav) {
+    nav.classList.toggle('visible');
+  }
+}
