@@ -1,7 +1,7 @@
 ﻿document.addEventListener('DOMContentLoaded', () => {
   const headerDiv = document.getElementById('header');
   if (headerDiv) {
-    fetch('componentes/header.html')
+    fetch('/jucenic-site/componentes/header.html')
       .then(response => response.text())
       .then(data => {
         headerDiv.innerHTML = data;
