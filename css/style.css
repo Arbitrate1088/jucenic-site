@@ -37,6 +37,9 @@ a {
 /* Logo */
 .logo img {
   max-width: 190px;
+  min-width: 100px;
+  height: auto;
+  display: block;
 }
 
 /* Menú */
@@ -322,6 +325,7 @@ main.contenido-principal {
   }
 
   .logo img {
-    max-width: 30%;
+     max-width: 150px;
+    min-width: 100px;
   }
 }
