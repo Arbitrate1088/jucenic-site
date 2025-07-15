@@ -36,8 +36,8 @@ a {
 
 /* Logo */
 .logo img {
-  max-width: 190px;
-  min-width: 100px;
+  max-width: 250px;
+  min-width: 150px;
   height: auto;
   display: block;
 }
