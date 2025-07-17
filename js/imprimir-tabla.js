@@ -1,0 +1,3 @@
+﻿function imprimirTabla() {
+  window.print();
+}
