@@ -329,3 +329,91 @@ main.contenido-principal {
     min-width: 100px;
   }
 }
+
+/*AQUI EMPIEZA EL ESTILO DE TABLA*/
+.resumen-section {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+/* TITULO*/
+.resumen-titulo {
+  font-size: 20px;
+  margin-bottom: 16px;
+  text-align: left;
+  /*TITULO*/
+}
+/*TODA LA TABLA*/
+.resumen-tabla {
+  width: 70%;
+  border-collapse: collapse;
+  margin-bottom: 16px;
+  
+  
+} /*TODA LA TABLA*/
+
+/*LINEAS,BORDES Y FORMATO (toda la tabla)*/
+.resumen-tabla th,
+.resumen-tabla td {
+  border: 1px solid #ccc;
+  padding: 8px;
+   border-left: 0px;
+  border-right: 0px; 
+  /* FIN LINEAS,BORDES Y FORMATO (toda la tabla)*/
+}
+/*LINEAS ,BORDES Y FORMATO DE ENCABEZADO*/
+.resumen-tabla th {
+  background-color: #f5f5f5;
+  text-align: left;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 1px solid black;
+  /* FIN LINEAS ,BORDES Y FORMATO DE ENCABEZADO*/
+}
+
+/*LLAMADAS A ENCABEZADOS*/
+.resumen-tabla th.right {
+  text-align: right;
+}
+
+.resumen-tabla th.left {
+  text-align: left;
+}/*LLAMADAS A ENCABEZADOS*/
+
+/*LLAMADAS A VALORES CELDAS*/
+.resumen-tabla td.right {
+  text-align: right;
+}
+
+.resumen-tabla td.center {
+  text-align: center;
+}
+/*LLAMADAS A VALORES CELDAS*/
+
+.btn-imprimir {
+  background-color: #9FE870;
+  color: #000;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #tabla-resumen, #tabla-resumen * {
+    visibility: visible;
+  }
+  #tabla-resumen {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+/*AQUI TERMINA EL ESTILO DE TABLA*/
