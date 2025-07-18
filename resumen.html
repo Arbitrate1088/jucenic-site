@@ -1,68 +1,51 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <title>Resumen Financiero</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/imprimir-tabla.js" defer></script>
 </head>
 <body>
-
-  <!-- Contenedor para cargar el header desde header.html -->
+ <!-- Cabecera -->
   <div id="header"></div>
 
-  <!-- Contenido principal para mantener el footer en el fondo -->
-  <main class="main-content">
-    <!-- Sección de resumen -->
-    <section class="resumen-section">
-      <h2 class="resumen-titulo">Resumen Financiero</h2>
-      <div class="tabla-container" id="tabla-resumen">
-        <table class="resumen-tabla">
-          <thead>
-            <tr>
-              <th class="left">Fecha</th>
-              <th class="right">Cliente</th>
-              <th class="right">Monto</th>
-              <th class="right">Estado</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>2025-07-10</td>
-              <td class="right">Juan Pérez</td>
-              <td class="right">S/ 3,500.00</td>
-              <td class="right">Pagado</td>
-            </tr>
-            <tr>
-              <td>2025-07-12</td>
-              <td class="right">María Gómez</td>
-              <td class="right">S/ 1,800.00</td>
-              <td class="right">Pendiente</td>
-            </tr>
-          </tbody>
-        </table>
-        <button class="btn-imprimir" onclick="imprimirTabla()">Imprimir</button>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-   
-  </footer>
-
-  <!-- Logo solo para impresión -->
-  <div class="logo-impresion">
-    <img src="assets/img/jucenic-logo.svg" alt="Logo Jucenic" height="40">
+<!-- Tabla de resumen -->
+<section class="resumen-section">
+  <h2 class="resumen-titulo">Resumen Financiero</h2>
+  <div class="tabla-container" id="tabla-resumen">
+    <table class="resumen-tabla">
+      <thead>
+        <tr>
+          <th class="left">Fecha</th>
+          <th class="right">Cliente</th>
+          <th class="right">Monto</th>
+          <th class="right">Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2025-07-10</td>
+          <td class="right">Juan Pérez</td>
+          <td class="right">S/ 3,500.00</td>
+          <td class="right">Pagado</td>
+        </tr>
+        <tr>
+          <td>2025-07-12</td>
+          <td class="right">María Gómez</td>
+          <td class="right">S/ 1,800.00</td>
+          <td class="right">Pendiente</td>
+        </tr>
+      </tbody>
+    </table>
+    <button class="btn-imprimir" onclick="imprimirTabla()">Imprimir</button>
   </div>
+</section>
+  <!-- Pie de página -->
+  <div id="footer-container"></div>
 
-  <!-- Script para cargar el header -->
-  <script src="cargar-header.js"></script>
+  <script src="js/cargar-header.js"></script>
+  <script src="js/cargar-footer.js"></script>
 
-  <!-- Función para imprimir solo la tabla -->
-  <script>
-    function imprimirTabla() {
-      window.print();
-    }
-  </script>
 </body>
 </html>
