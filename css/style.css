@@ -1,4 +1,4 @@
-﻿/* ==== BASE GENERAL ==== */
+/* ==== BASE GENERAL ==== */
 body {
   font-family: 'Inter', Helvetica, Arial, sans-serif;
   font-size: 12px;
@@ -331,31 +331,6 @@ main.contenido-principal {
 }
 
 /*AQUI EMPIEZA EL ESTILO DE TABLA*/
-.
-  background-color: #9FE870;
-  color: #000;
-  font-weight: bold;
-  font-size: 14px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-@media print {
-  body * {
-    visibility: hidden;
-  }
-  #tabla-resumen, #tabla-resumen * {
-    visibility: visible;
-  }
-  #tabla-resumen {
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
-}
-/*AQUI TERMINA EL ESTILO DE TABLA*/
 .resumen-section {
   font-family: Arial, sans-serif;
   font-size: 12px;
@@ -363,7 +338,6 @@ main.contenido-principal {
   margin: 40px auto;
   padding: 0 16px;
 }
-
 /* TITULO*/
 .resumen-titulo {
   font-size: 20px;
@@ -371,12 +345,13 @@ main.contenido-principal {
   text-align: left;
   /*TITULO*/
 }
-
 /*TODA LA TABLA*/
 .resumen-tabla {
   width: 70%;
   border-collapse: collapse;
   margin-bottom: 16px;
+  
+  
 } /*TODA LA TABLA*/
 
 /*LINEAS,BORDES Y FORMATO (toda la tabla)*/
@@ -384,11 +359,10 @@ main.contenido-principal {
 .resumen-tabla td {
   border: 1px solid #ccc;
   padding: 8px;
-  border-left: 0px;
+   border-left: 0px;
   border-right: 0px; 
   /* FIN LINEAS,BORDES Y FORMATO (toda la tabla)*/
 }
-
 /*LINEAS ,BORDES Y FORMATO DE ENCABEZADO*/
 .resumen-tabla th {
   background-color: #f5f5f5;
@@ -422,53 +396,24 @@ main.contenido-principal {
   background-color: #9FE870;
   color: #000;
   font-weight: bold;
-  padding: 10px 20px;
   font-size: 14px;
+  padding: 10px 20px;
   border: none;
-  cursor: pointer;
   border-radius: 20px;
-  margin-bottom: 20px;
+  cursor: pointer;
 }
 
-/* Oculta el botón al imprimir */
 @media print {
-  .btn-imprimir {
-    display: none;
+  body * {
+    visibility: hidden;
   }
-
-  .resumen-tabla {
-    width: 100% !important;
-    font-size: 11px;
+  #tabla-resumen, #tabla-resumen * {
+    visibility: visible;
   }
-
-  /* Muestra logo en impresión */
-  .logo-impresion {
-    display: block;
+  #tabla-resumen {
     position: absolute;
-    top: 10px;
-    left: 10px;
-  }
-
-  /* Oculta footer en impresión */
-  .footer {
-    display: none;
+    left: 0;
+    top: 0;
   }
 }
-
-/* Oculta logo impresión por defecto */
-.logo-impresion {
-  display: none;
-}
-
-/* Para forzar el footer abajo en escritorio */
-html, body {
-  height: 100%;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-.main-content {
-  flex: 1;
-}
-
+/*AQUI TERMINA EL ESTILO DE TABLA*/
