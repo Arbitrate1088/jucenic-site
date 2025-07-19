@@ -1,4 +1,4 @@
-/* ==== BASE GENERAL ==== */
+﻿/* ==== BASE GENERAL ==== */
 body {
   font-family: 'Inter', Helvetica, Arial, sans-serif;
   font-size: 12px;
@@ -330,7 +330,12 @@ main.contenido-principal {
   }
 }
 
+
 /*AQUI EMPIEZA EL ESTILO DE TABLA*/
+/* Área principal toma el espacio disponible */
+.main-content {
+  flex: 1;
+}
 .resumen-section {
   font-family: Arial, sans-serif;
   font-size: 12px;
@@ -338,12 +343,17 @@ main.contenido-principal {
   margin: 40px auto;
   padding: 0 16px;
 }
+
 /* TITULO*/
 .resumen-titulo {
   font-size: 20px;
   margin-bottom: 16px;
   text-align: left;
   /*TITULO*/
+}
+/*esto pone una barra de desplazamiento si es muy ancho*/
+.tabla-container {
+  overflow-x: auto;
 }
 /*TODA LA TABLA*/
 .resumen-tabla {
@@ -403,17 +413,45 @@ main.contenido-principal {
   cursor: pointer;
 }
 
+/* === ESTILOS PARA IMPRESIÓN === */
 @media print {
-  body * {
-    visibility: hidden;
+  body {
+    padding: 0;
+    margin: 0;
   }
-  #tabla-resumen, #tabla-resumen * {
-    visibility: visible;
+
+  .btn-imprimir {
+    display: none;
   }
-  #tabla-resumen {
+
+  .logo-impresion {
+    display: block;
     position: absolute;
-    left: 0;
-    top: 0;
+    top: 10px;
+    left: 10px;
+  }
+
+  .footer {
+    display: none;
+  }
+
+  .resumen-section {
+    padding: 0;
+    margin: 0;
+  }
+
+  .resumen-tabla {
+    width: 100%;
+    font-size: 11px;
+    border-collapse: collapse;
+  }
+
+  .resumen-tabla th,
+  .resumen-tabla td {
+    padding: 4px;
   }
 }
+
 /*AQUI TERMINA EL ESTILO DE TABLA*/
+
+	  
