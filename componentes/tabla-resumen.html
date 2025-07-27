@@ -1,4 +1,22 @@
-﻿<!DOCTYPE html>
-<html lang="es">
-<h1> aqui va la tabla</h1>
-</html>
+﻿<!-- Tabla resumen cargada dinámicamente -->
+<table class="resumen-tabla">
+  <thead>
+    <tr>
+      <th class="left">Fecha</th>
+      <th class="right">Cliente</th>
+      <th class="right">Pagos S/</th>
+      <th class="right">Pagos $</th>
+      <th class="right">Gastos S/</th>
+      <th class="right">Gastos $</th>
+      <th class="right">Saldo S/</th>
+      <th class="right">Saldo $</th>
+    </tr>
+  </thead>
+  <tbody id="tabla-datos"></tbody>
+</table>
+
+<!-- Botón para imprimir al final -->
+<button class="btn-imprimir" onclick="window.print()">🖨️ Imprimir</button>
+
+<!-- Script para cargar los datos -->
+<script src="js/cargar-filas-resumen.js"></script>
