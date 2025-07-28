@@ -14,37 +14,16 @@
   <section class="resumen-section">
     <h1>Resumen de Movimientos</h1>
 
-    <div class="tabla-container">
-      <table class="resumen-tabla">
-        <thead>
-          <tr>
-            <th class="left">Fecha</th>
-            <th class="right">Cliente</th>
-            <th class="right">Pagos S/</th>
-            <th class="right">Pagos $</th>
-            <th class="right">Gastos S/</th>
-            <th class="right">Gastos $</th>
-            <th class="right">Saldo S/</th>
-            <th class="right">Saldo $</th>
-          </tr>
-        </thead>
-        <tbody id="tabla-body">
-          <!-- Las filas se cargarán automáticamente -->
-        </tbody>
-      </table>
-    </div>
-
-    <!-- BOTÓN IMPRIMIR -->
-    <div style="text-align: right; margin-top: 20px;">
-      <button class="btn-imprimir" onclick="window.print()">🖨️ Imprimir</button>
-    </div>
+    <!-- Aquí se cargará la tabla -->
+    <div id="contenedor-tabla"></div>
   </section>
 
   <!-- PIE DE PÁGINA -->
   <div id="footer-container"></div>
   <script src="js/cargar-footer.js"></script>
 
-  <!-- CARGAR DATOS -->
+  <!-- CARGAR TABLA Y DATOS -->
+  <script src="js/cargar-tabla.js"></script>
   <script src="js/cargar-filas-resumen.js"></script>
 </body>
 </html>
